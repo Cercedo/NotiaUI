@@ -40,5 +40,7 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
       },
     },
+    'no-console': 'warn',
+    'no-debugger': 'warn',
   },
 };
