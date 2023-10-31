@@ -29,6 +29,31 @@ module.exports = {
       },
     ],
     'react/react-in-jsx-scope': 'off',
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: ['@/features/*/*'],
+      },
+    ],
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+        ],
+        'newlines-between': 'always',
+        alphabetize: { order: 'asc', caseInsensitive: true },
+      },
+    ],
+    'import/default': 'off',
+    'import/no-named-as-default-member': 'off',
+    'import/no-named-as-default': 'off',
   },
   settings: {
     react: {
