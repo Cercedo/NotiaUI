@@ -9,7 +9,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:react/jsx-runtime',
     'plugin:@typescript-eslint/recommended',
-    'prettier',
+    'plugin:prettier/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -37,6 +37,10 @@ module.exports = {
     'import/resolver': {
       node: {
         paths: ['src'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      },
+      alias: {
+        map: [['@', './src']],
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
       },
     },
