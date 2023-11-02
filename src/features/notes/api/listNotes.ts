@@ -1,7 +1,7 @@
 import { NOTE_API_ENDPOINTS } from '../params';
 import { Note } from '../types';
 
-const listNotes = async (
+export const listNotes = async (
   signal: AbortSignal | null = null
 ): Promise<Note[] | undefined> => {
   const url = NOTE_API_ENDPOINTS.list();
@@ -25,5 +25,3 @@ const listNotes = async (
     console.error(`Could not list notes: ${error}`);
   }
 };
-
-export default listNotes;

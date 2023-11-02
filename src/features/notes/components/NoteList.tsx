@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import listNotes from '../api/listNotes';
+import { Spinner } from '@/components/Elements';
+
+import { listNotes } from '../api/listNotes';
 import { Note } from '../types';
 
-const NoteList: React.FC<Record<string, never>> = () => {
+export const NoteList: React.FC = () => {
   const [notes, setNotes] = useState<Note[] | null>(null);
 
   useEffect(() => {
@@ -30,7 +32,12 @@ const NoteList: React.FC<Record<string, never>> = () => {
   };
 
   if (!notes) {
-    return <p>Loading...</p>;
+    return (
+      <p className="flex items-center text-indigo-500">
+        <Spinner size="sm" />
+        <span className="ml-2 italic">Loading...</span>
+      </p>
+    );
   }
 
   if (notes.length === 0) {
@@ -43,5 +50,3 @@ const NoteList: React.FC<Record<string, never>> = () => {
     </div>
   );
 };
-
-export default NoteList;
